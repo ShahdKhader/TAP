@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services Box </title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#sort-button').select2({
+      theme: 'classic',
+    });
+  });
+</script>
+
+<script>
+    function drawShape3() {
+        var canvas = document.getElementById('mycanvas');
+        if (canvas.getContext) {
+            var ctx = canvas.getContext('2d');
+            // Create gradient
+            var grd = ctx.createLinearGradient(0, 10, 300, 0);
+            grd.addColorStop(0, '#03C180');
+            grd.addColorStop(1, '#03C180');
+
+            var grd2 = ctx.createLinearGradient(0, 10, 300, 0);
+            grd2.addColorStop(0, '#03C180');
+            grd2.addColorStop(1, '#0768AC');
+
+            // Draw the original shape right
+            ctx.beginPath();
+            ctx.lineTo(50,25);
+            ctx.lineTo(500, 200);
+            ctx.lineTo(500, 25);
+            ctx.lineTo(75, 25);
+            ctx.fillStyle = grd;
+            ctx.fill();
+            ctx.strokeStyle = 'transparent';
+            ctx.stroke();
+
+            ctx.save();
+            ctx.scale(-1, 1);
+            ctx.translate( -canvas.width,0);// flip on y axis
+
+            // Draw the duplicated shape
+            ctx.beginPath();
+            ctx.lineTo(75, 25);
+            ctx.lineTo(500, 200);
+            ctx.lineTo(500, 25);
+            ctx.lineTo(75, 25);
+            ctx.fillStyle = grd2;
+            ctx.fill();
+            ctx.stroke();
+            ctx.restore(); // Restore the saved context state
+        }
+    }
+</script>
+</head>
+<body id="test" onload="drawShape3();">
+    <div class="top-of-page">
+        <div class="top">
+            <p id="web-topics">Web Topics</p>
+            <div class="top-button">
+                <button id="dark-mode"><ion-icon name="moon-outline"></ion-icon>Dark Mode</button>
+                <button><ion-icon name="heart-outline"></ion-icon>Favourites</button>
+            </div>
+        </div>
+        <canvas id="mycanvas"></canvas>
+        <h4> Welcome to our Website!</h4>
+        <p> We have a new design that's fresh, modern, and easy to use.
+        </p>
+    </div>
+    <div class="wrapper">
+                <div class="search-bar">
+                    <form action="index.html" method="post">
+
+                        <div class="logo">
+                        <ion-icon name="search"></ion-icon>
+                        </div>
+                        <input type="text" placeholder="Search the website..." class="search-input">
+                        
+                        <select id="sort-select">
+                            <option value="default">Sort by Default</option>
+                            <option value="name">Sort by Name</option>
+                            <option value="price">Sort by Price</option>
+                          </select>
+                        <select id="filter-select">
+                            <option value="">Filter by </option>
+                            <option value="option1">Default</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                            <option value="option4">Option 4</option>
+                        </select>
+                    </form>
+                </div>
+            <h4 class="topics-number">"24" Web Topics Found</h4>
+    <div class="conatiner">
+            <div class="box">
+                <img src="html.png" alt="this is the logo of html box">
+                <p>Web Development Languages</p>
+                <h3>HTML</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='html5' data-idx='0'>	
+                      <label for='html5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='html4' data-idx='1'>
+                      <label for='html4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='html3' data-idx='2'>
+                      <label for='html3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='html2' data-idx='3'>
+                      <label for='html2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='html1' data-idx='4'>
+                      <label for='html1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Sarah Smith</p>
+            </div>
+            <div class="box">
+                <img src="css.webp" alt="this is the logo of css box">
+                <p>Web Development Languages</p>
+                <h3>CSS</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='css5' data-idx='0'>	
+                      <label for='css5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='css4' data-idx='1'>
+                      <label for='css4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='css3' data-idx='2'>
+                      <label for='css3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='css2' data-idx='3'>
+                      <label for='css2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='css1' data-idx='4'>
+                      <label for='css1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: David Lee</p>
+            </div>
+            <div class="box">
+                <img src="javascript.jpg" alt="this is the logo of javaScript box">
+                <p>Web Development Languages</p>
+                <h3>JavaScript</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='js5' data-idx='0'>	
+                      <label for='js5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='js4' data-idx='1'>
+                      <label for='js4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='js3' data-idx='2'>
+                      <label for='js3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='js2' data-idx='3'>
+                      <label for='js2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='js1' data-idx='4'>
+                      <label for='js1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Emily Chen</p>
+    
+            </div>
+            <div class="box">
+                <img src="jquery.png" alt="this is the logo of jquery box">
+                <p>Frontend Frameworks and Libraries</p>
+                <h3>JQuery</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='jq5' data-idx='0'>	
+                      <label for='jq5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='jq4' data-idx='1'>
+                      <label for='jq4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='jq3' data-idx='2'>
+                      <label for='jq3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='jq2' data-idx='3'>
+                      <label for='jq2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='jq1' data-idx='4'>
+                      <label for='jq1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: John Johson</p>
+    
+            </div>
+            <div class="box">
+                <img src="angular.png" alt="this is the logo of angular box">
+                <p>Frontend Frameworks and Libraries</p>
+                <h3>Angular</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='angular5' data-idx='0'>	
+                      <label for='angular5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='angular4' data-idx='1'>
+                      <label for='angular4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='angular3' data-idx='2'>
+                      <label for='angular3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='angular2' data-idx='3'>
+                      <label for='angular2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='angular1' data-idx='4'>
+                      <label for='angular1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Jessica Davis</p>
+    
+            </div>
+            <div class="box">
+                <img src="react.webp" alt="this is the logo of react box">
+                <p>Frontend Frameworks and Libraries</p>
+                <h3>React</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='react5' data-idx='0'>	
+                      <label for='react5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='react4' data-idx='1'>
+                      <label for='react4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='react3' data-idx='2'>
+                      <label for='react3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='react2' data-idx='3'>
+                      <label for='react2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='react1' data-idx='4'>
+                      <label for='react1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Daniel Brown</p>
+    
+            </div>
+            <div class="box">
+                <img src="vuejs.jpeg" alt="this is the logo of vuejs box">
+                <p>Frontend Frameworks and Libraries</p>
+                <h3>Vue.js</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='vuejs5' data-idx='0'>	
+                      <label for='vuejs5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='vuejs4' data-idx='1'>
+                      <label for='vuejs4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='vuejs3' data-idx='2'>
+                      <label for='vuejs3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='vuejs2' data-idx='3'>
+                      <label for='vuejs2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='vuejs1' data-idx='4'>
+                      <label for='vuejs1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Ava Jones</p>
+    
+            </div>
+            <div class="box">
+                <img src="nodejs.webp" alt="this is the logo of nodejs box">
+                <p>Backend Frameworks and Libraries</p>
+                <h3>Node.js</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='nodejs5' data-idx='0'>	
+                      <label for='nodejs5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='nodejs4' data-idx='1'>
+                      <label for='nodejs4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='nodejs3' data-idx='2'>
+                      <label for='nodejs3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='nodejs2' data-idx='3'>
+                      <label for='nodejs2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='nodejs1' data-idx='4'>
+                      <label for='nodejs1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Michael Kim</p>
+    
+            </div>
+            <div class="box">
+                <img src="expressjs.webp" alt="this is the logo of expressjs box">
+                <p>Backend Frameworks and Libraries</p>
+                <h3>Express.js</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='expressjs5' data-idx='0'>	
+                      <label for='expressjs5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='expressjs4' data-idx='1'>
+                      <label for='expressjs4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='expressjs3' data-idx='2'>
+                      <label for='expressjs3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='expressjs2' data-idx='3'>
+                      <label for='expressjs2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='expressjs1' data-idx='4'>
+                      <label for='expressjs1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Sophia Rodriguez</p>
+    
+            </div>
+            <div class="box">
+                <img src="ruby.jpeg" alt="this is the logo of ruby box">
+                <p>Backend Frameworks and Libraries</p>
+                <h3>Ruby on Rails</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='ruby5' data-idx='0'>	
+                      <label for='ruby5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ruby4' data-idx='1'>
+                      <label for='ruby4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ruby3' data-idx='2'>
+                      <label for='ruby3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ruby2' data-idx='3'>
+                      <label for='ruby2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ruby1' data-idx='4'>
+                      <label for='ruby1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: william Lee</p>
+    
+            </div>
+            <div class="box">
+                <img src="django.jpeg" alt="this is the logo of django box">
+                <p>Backend Frameworks and Libraries</p>
+                <h3>Django</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='django5' data-idx='0'>	
+                      <label for='django5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='django4' data-idx='1'>
+                      <label for='django4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='django3' data-idx='2'>
+                      <label for='django3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='django2' data-idx='3'>
+                      <label for='django2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='django1' data-idx='4'>
+                      <label for='django1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Olivia Martinez</p>
+    
+            </div>
+            <div class="box">
+                <img src="flask.webp" alt="this is the logo of flask box">
+                <p>Backend Frameworks and Libraries</p>
+                <h3>Flask</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='flask5' data-idx='0'>	
+                      <label for='flask5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='flask4' data-idx='1'>
+                      <label for='flask4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='flask3' data-idx='2'>
+                      <label for='flask3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='flask2' data-idx='3'>
+                      <label for='flask2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='flask1' data-idx='4'>
+                      <label for='flask1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Ethan Thompson</p>
+    
+            </div>
+            <div class="box">
+                <img src="sql.png" alt="this is the logo of sql box">
+                <p>Databases and APIs</p>
+                <h3>SQL</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='sql5' data-idx='0'>	
+                      <label for='sql5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='sql4' data-idx='1'>
+                      <label for='sql4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='sql3' data-idx='2'>
+                      <label for='sql3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='sql2' data-idx='3'>
+                      <label for='sql2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='sql1' data-idx='4'>
+                      <label for='sql1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Madison Davis</p>
+    
+            </div>
+            <div class="box">
+                <img src="nosql.png" alt="this is the logo of nosql box">
+                <p>Databases and APIs</p>
+                <h3>NoSQL</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='nosql5' data-idx='0'>	
+                      <label for='nosql5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='nosql4' data-idx='1'>
+                      <label for='nosql4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='nosql3' data-idx='2'>
+                      <label for='nosql3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='nosql2' data-idx='3'>
+                      <label for='nosql2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='nosql1' data-idx='4'>
+                      <label for='nosql1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Isabella Wilson</p>
+    
+            </div>
+            <div class="box">
+                <img src="restapi.jpeg" alt="this is the logo of restapi box">
+                <p>Databases and APIs</p>
+                <h3>REST APIs</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='restapi5' data-idx='0'>	
+                      <label for='restapi5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='restapi4' data-idx='1'>
+                      <label for='restapi4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='restapi3' data-idx='2'>
+                      <label for='restapi3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='restapi2' data-idx='3'>
+                      <label for='restapi2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='restapi1' data-idx='4'>
+                      <label for='restapi1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Jacob Garcia</p>
+    
+            </div>
+            <div class="box">
+                <img src="graphql.png" alt="this is the logo of graphql box">
+                <p>Databases and APIs</p>
+                <h3>GraphQL</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='graphql5' data-idx='0'>	
+                      <label for='graphql5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='graphql4' data-idx='1'>
+                      <label for='graphql4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='graphql3' data-idx='2'>
+                      <label for='graphql3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='graphql2' data-idx='3'>
+                      <label for='graphql2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='graphql1' data-idx='4'>
+                      <label for='graphql1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Mia Brown</p>
+    
+            </div>
+            <div class="box">
+                <img src="oauth.png" alt="this is the logo of oauth box">
+                <p>Web Development Concepts</p>
+                <h3>OAuth</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='oauth5' data-idx='0'>	
+                      <label for='oauth5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='oauth4' data-idx='1'>
+                      <label for='oauth4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='oauth3' data-idx='2'>
+                      <label for='oauth3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='oauth2' data-idx='3'>
+                      <label for='oauth2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='oauth1' data-idx='4'>
+                      <label for='oauth1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Evelyn Nguyen</p>
+    
+            </div>
+            <div class="box">
+                <img src="json.png" alt="this is the logo of json box">
+                <p>Web Development Concepts</p>
+                <h3>JSON</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='json5' data-idx='0'>	
+                      <label for='json5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='json4' data-idx='1'>
+                      <label for='json4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='json3' data-idx='2'>
+                      <label for='json3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='json2' data-idx='3'>
+                      <label for='json2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='json1' data-idx='4'>
+                      <label for='json1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Liam Hernandez</p>
+    
+            </div>
+            <div class="box">
+                <img src="ajax.gif" alt="this is the logo of ajax box">
+                <p>Web Development Concepts</p>
+                <h3>AJAX</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='ajax5' data-idx='0'>	
+                      <label for='ajax5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ajax4' data-idx='1'>
+                      <label for='ajax4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ajax3' data-idx='2'>
+                      <label for='ajax3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ajax2' data-idx='3'>
+                      <label for='ajax2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ajax1' data-idx='4'>
+                      <label for='ajax1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Avery Perez</p>
+    
+            </div>
+            <div class="box">
+                <img src="websockets.png" alt="this is the logo of websockets box">
+                <p>Web Development Concepts</p>
+                <h3>Websockets</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='websockets5' data-idx='0'>	
+                      <label for='websockets5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='websockets4' data-idx='1'>
+                      <label for='websockets4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='websockets3' data-idx='2'>
+                      <label for='websockets3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='websockets2' data-idx='3'>
+                      <label for='websockets2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='websockets1' data-idx='4'>
+                      <label for='websockets1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Victoria Kim</p>
+    
+            </div>
+            <div class="box">
+                <img src="responsive.gif" alt="this is the logo of responsive box">
+                <p>Web Development Concepts</p>
+                <h3>Responsive Design</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='responsive5' data-idx='0'>	
+                      <label for='responsive5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='responsive4' data-idx='1'>
+                      <label for='responsive4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='responsive3' data-idx='2'>
+                      <label for='responsive3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='responsive2' data-idx='3'>
+                      <label for='responsive2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='responsive1' data-idx='4'>
+                      <label for='responsive1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Ryan Jones</p>
+    
+            </div>
+            <div class="box">
+                <img src="accessibility.png" alt="this is the logo of accessibility box">
+                <p>Web Development Concepts</p>
+                <h3>ِAccessibility</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='accessibility5' data-idx='0'>	
+                      <label for='accessibility5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='accessibility4' data-idx='1'>
+                      <label for='accessibility4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='accessibility3' data-idx='2'>
+                      <label for='accessibility3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='accessibility2' data-idx='3'>
+                      <label for='accessibility2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='accessibility1' data-idx='4'>
+                      <label for='accessibility1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Samantha Martin</p>
+    
+            </div>
+            <div class="box">
+                <img src="ux.jpeg" alt="this is the logo of ux box">
+                <p>Web Development Concepts</p>
+                <h3>User Experience (UX)</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='ux5' data-idx='0'>	
+                      <label for='ux5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ux4' data-idx='1'>
+                      <label for='ux4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ux3' data-idx='2'>
+                      <label for='ux3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ux2' data-idx='3'>
+                      <label for='ux2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ux1' data-idx='4'>
+                      <label for='ux1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Luke Davis</p>
+    
+            </div>
+            <div class="box">
+                <img src="ui.png" alt="this is the logo of ui box">
+                <p>Web Development Concepts</p>
+                <h3>User Interface (UI)</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='ui5' data-idx='0'>	
+                      <label for='ui5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ui4' data-idx='1'>
+                      <label for='ui4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ui3' data-idx='2'>
+                      <label for='ui3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ui2' data-idx='3'>
+                      <label for='ui2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ui1' data-idx='4'>
+                      <label for='ui1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: User Interface (UI)</p>
+    
+            </div>
+            <div class="box">
+                <img src="design-systems.jpeg" alt="this is the logo of design-systems box">
+                <p>Web Development Concepts</p>
+                <h3>Design Systems</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='design-systems5' data-idx='0'>	
+                      <label for='design-systems5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='design-systems4' data-idx='1'>
+                      <label for='design-systems4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='design-systems3' data-idx='2'>
+                      <label for='design-systems3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='design-systems2' data-idx='3'>
+                      <label for='design-systems2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='design-systems1' data-idx='4'>
+                      <label for='design-systems1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Noah Martinez</p>
+    
+            </div>
+            <div class="box">
+                <img src="performance.png" alt="this is the logo of performance box">
+                <p>Web Development Concepts</p>
+                <h3>Performance Optimization</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='performance5' data-idx='0'>	
+                      <label for='performance5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='performance4' data-idx='1'>
+                      <label for='performance4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='performance3' data-idx='2'>
+                      <label for='performance3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='performance2' data-idx='3'>
+                      <label for='performance2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='performance1' data-idx='4'>
+                      <label for='performance1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Chloe Taylor</p>
+    
+            </div>
+            <div class="box">
+                <img src="cross-browser.jpeg" alt="this is the logo of cross-browser box">
+                <p>Web Development Concepts</p>
+                <h3>Cross-Browser Compatinility</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='cross-browser5' data-idx='0'>	
+                      <label for='cross-browser5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='cross-browser4' data-idx='1'>
+                      <label for='cross-browser4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='cross-browser3' data-idx='2'>
+                      <label for='cross-browser3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='cross-browser2' data-idx='3'>
+                      <label for='cross-browser2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='cross-browser1' data-idx='4'>
+                      <label for='cross-browser1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: David Lee</p>
+    
+            </div>
+            <div class="box">
+                <img src="seo.jpeg" alt="this is the logo of seo box">
+                <p>Web Development Concepts</p>
+                <h3>Search Engine Optimization (SEO)</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='seo5' data-idx='0'>	
+                      <label for='seo5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='seo4' data-idx='1'>
+                      <label for='seo4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='seo3' data-idx='2'>
+                      <label for='seo3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='seo2' data-idx='3'>
+                      <label for='seo2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='seo1' data-idx='4'>
+                      <label for='seo1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Emily Kim</p>
+    
+            </div>
+            <div class="box">
+                <img src="web-security.jpeg" alt="this is the logo of web-security box">
+                <p>Web Development Concepts</p>
+                <h3>Web Security</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='web-security5' data-idx='0'>	
+                      <label for='web-security5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='web-security4' data-idx='1'>
+                      <label for='web-security4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='web-security3' data-idx='2'>
+                      <label for='web-security3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='web-security2' data-idx='3'>
+                      <label for='web-security2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='web-security1' data-idx='4'>
+                      <label for='web-security1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Gabriel Hernandez</p>
+    
+            </div>
+            <div class="box">
+                <img src="testing.jpeg" alt="this is the logo of testing box">
+                <p>Web Development Concepts</p>
+                <h3>Testing and Debugging</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='testing5' data-idx='0'>	
+                      <label for='testing5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='testing4' data-idx='1'>
+                      <label for='testing4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='testing3' data-idx='2'>
+                      <label for='testing3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='testing2' data-idx='3'>
+                      <label for='testing2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='testing1' data-idx='4'>
+                      <label for='testing1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Avery Perez</p>
+            </div>
+            <div class="box">
+                <img src="ci-cd.jpeg" alt="this is the logo of ci-cd box">
+                <p>Web Development Concepts</p>
+                <h3>Continuous <br> Integration/Continuous Debugging</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='ci-cd5' data-idx='0'>	
+                      <label for='ci-cd5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ci-cd4' data-idx='1'>
+                      <label for='ci-cd4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ci-cd3' data-idx='2'>
+                      <label for='ci-cd3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ci-cd2' data-idx='3'>
+                      <label for='ci-cd2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='ci-cd1' data-idx='4'>
+                      <label for='ci-cd1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Madison Davis</p>
+    
+            </div>
+            <div class="box">
+                <img src="devops.png" alt="this is the logo of devops box">
+                <p>Web Development Concepts</p>
+                <h3>DevOps</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='devops5' data-idx='0'>	
+                      <label for='devops5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='devops4' data-idx='1'>
+                      <label for='devops4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='devops3' data-idx='2'>
+                      <label for='devops3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='devops2' data-idx='3'>
+                      <label for='devops2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='devops1' data-idx='4'>
+                      <label for='devops1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Isabella Wilson</p>
+    
+            </div>
+            <div class="box">
+                <img src="cloud.jpeg" alt="this is the logo of cloud box">
+                <p>Web Development Concepts</p>
+                <h3>Cloud Computing</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='cloud5' data-idx='0'>	
+                      <label for='cloud5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='cloud4' data-idx='1'>
+                      <label for='cloud4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='cloud3' data-idx='2'>
+                      <label for='cloud3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='cloud2' data-idx='3'>
+                      <label for='cloud2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='cloud1' data-idx='4'>
+                      <label for='cloud1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Jacob Garcia</p>
+    
+            </div>
+            <div class="box">
+                <img src="docker.png" alt="this is the logo of docker box">
+                <p>Web Development Concepts</p>
+                <h3>Docker</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='docker5' data-idx='0'>	
+                      <label for='docker5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='docker4' data-idx='1'>
+                      <label for='docker4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='docker3' data-idx='2'>
+                      <label for='docker3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='docker2' data-idx='3'>
+                      <label for='docker2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='docker1' data-idx='4'>
+                      <label for='docker1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Mia Brown</p>
+    
+            </div>
+            <div class="box">
+                <img src="microservices.png" alt="this is the logo of microservices box">
+                <p>Web Development Concepts</p>
+                <h3>Mcroservices</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='microservices5' data-idx='0'>	
+                      <label for='microservices5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='microservices4' data-idx='1'>
+                      <label for='microservices4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='microservices3' data-idx='2'>
+                      <label for='microservices3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='microservices2' data-idx='3'>
+                      <label for='microservices2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='microservices1' data-idx='4'>
+                      <label for='microservices1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Evelyn Nguyen</p>
+    
+            </div> 
+            <div class="box">
+                <img src="pwa.png" alt="this is the logo of pwa box">
+                <p>Web Development Concepts</p>
+                <h3>Progressive Web Apps(PWA)</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='pwa5' data-idx='0'>	
+                      <label for='pwa5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='pwa4' data-idx='1'>
+                      <label for='pwa4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='pwa3' data-idx='2'>
+                      <label for='pwa3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='pwa2' data-idx='3'>
+                      <label for='pwa2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='pwa1' data-idx='4'>
+                      <label for='pwa1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Liam Hernandez</p>
+        
+            </div>
+            <div class="box">
+                <img src="wai.jpeg" alt="this is the logo of wai box">
+                <p>Web Development Concepts</p>
+                <h3>Web Accessibility Initiative(WAI)</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='wai5' data-idx='0'>	
+                      <label for='wai5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='wai4' data-idx='1'>
+                      <label for='wai4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='wai3' data-idx='2'>
+                      <label for='wai3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='wai2' data-idx='3'>
+                      <label for='wai2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='wai1' data-idx='4'>
+                      <label for='wai1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Avery Perez</p>
+        
+            </div>
+            <div class="box">
+                <img src="cms.png" alt="this is the logo of cms box">
+                <p>Web Development Concepts</p>
+                <h3></h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='cms5' data-idx='0'>	
+                      <label for='cms5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='cms4' data-idx='1'>
+                      <label for='cms4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='cms3' data-idx='2'>
+                      <label for='cms3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='cms2' data-idx='3'>
+                      <label for='cms2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='cms1' data-idx='4'>
+                      <label for='cms1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Victoria Kim</p>
+        
+            </div>
+            <div class="box">
+                <img src="analytics.png" alt="this is the logo of analytics box">
+                <p>Web Development Concepts</p>
+                <h3>Web Analytics</h3>
+                <form>
+                    <div class="rating">
+                      <input type='radio' hidden name='rate' id='analytics5' data-idx='0'>	
+                      <label for='analytics5'><span>Very satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='analytics4' data-idx='1'>
+                      <label for='analytics4'><span>Somewhat satisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='analytics3' data-idx='2'>
+                      <label for='analytics3'><span>Neutral</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='analytics2' data-idx='3'>
+                      <label for='analytics2'><span>Dissatisfied</span></label>
+                 
+                      <input type='radio' hidden name='rate' id='analytics1' data-idx='4'>
+                      <label for='analytics1'><span>Very Dissatisfied</span></label>
+                    </div>
+                 </form>
+                <p>Author: Ryan Jones</p>
+        
+            </div> 
+    </div>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+    var darkmode = document.getElementById("dark-mode");
+    darkmode.onclick = function(){
+        document.body.classList.toggle("dark-theme");
+    }
+</script>
+</body>
+<footer>
+    <p>Developed with <ion-icon name="heart"></ion-icon> &copy;2023</p>
+  </footer>
+  
+</html>
