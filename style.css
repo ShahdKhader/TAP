@@ -5,8 +5,8 @@
     font-family: 'Nunito Sans', sans-serif;
 } 
 :root{
-    --brand-primary:#0768AC;
-    --brand-secondary:	#03C180;
+  --brand-primary:#0768AC;
+  --brand-secondary:	#03C180;
  	--bg_default:	#FFFFFF;
  	--bg_body:	#F0F9FF;
  	--lines-color:	#DDDDDD;
@@ -21,6 +21,12 @@
  	--lines-color:	#000000;
  	--body-text:	#EDEDED;
  	--heart-color:	#DC143C;
+}
+#header{
+  color: var(--bg_body);
+}
+#footer{
+  color: var(--bg_body);
 }
 top-of-page{
     background-color: var(--bg_default);
@@ -39,17 +45,20 @@ top-of-page{
     padding-left: 35%;
     font-weight: bold;
     margin-top: -2rem;
+    padding-bottom: 0%;
     background-color: var(--bg_default);
 
 }
 .top-of-page p{
-    color: var(--lines-color);
+    color: var(--body-text);
     font-size: 20px;
     text-align: left; 
+    margin-top: -1rem;
+    margin-bottom: 0;
     padding-left: 35%;
     background-color: var(--bg_default);
 }
-.top {
+#top {
     display: flex;
     align-items: center;
     background-color: var(--bg_default);
@@ -71,15 +80,7 @@ top-of-page{
     padding: 1%;
     font-weight: bold;
  }
- #test {
-    margin-right: auto;
-    position: relative;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--bg_default);
 
-}
 #mycanvas{
     position: relative;
     width:100%;
@@ -88,17 +89,56 @@ top-of-page{
     justify-content: center;
     align-items: center;
     padding-bottom: -10px;
+    background-color: var(--bg_default);
     
 }
-.wrapper{
+#wrapper{
     width: 100%;
     padding: 0 8%;  
     background: var(--bg_body);
+    padding-top: 2rem;
 }
-.conatiner{
+.container{
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+}
+.search-bar {
+  position: relative;
+  /*display: flex;*/
+  width: 100%;
+  background-color: var(--bg_body);
+}
+.logo {
+  position: absolute;
+  top: 55%;
+  left: 0.6rem;
+  transform: translateY(-50%);
+  color: var(--body-text);
+}
+.search-input {
+  padding-left: 2.5rem;
+  width: 80%;
+  background-color: var(--bg_default);
+  height: 2.5rem;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+}
+#sortSelect{
+  height: 2.5rem;
+  width: 10%;
+  margin-left: -0.3rem;
+  background-color: var(--bg_default);
+  color: var(--body-text);
+}
+#filterSelect{
+  height: 2.5rem;
+  width: 10%;
+  margin-left: -0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  background-color: var(--bg_default);
+  color: var(--body-text);
 }
 .box{
    /* padding: 20px;*/
@@ -183,69 +223,20 @@ top-of-page{
     filter: drop-shadow(0 0 4px);
     transform: rotate(.2turn);
   }  
-@media (max-width:780px){
-    
-}
-.search-bar {
-    position: relative;
-    display: flex;
-     flex-direction: row;
-    align-items: center;
-    width: 100%;
-    background-color: var(--bg_default);
-  }
   
-  .logo {
-    position: absolute;
-    top: 55%;
-    left: 10px;
-    transform: translateY(-50%);
-    
-  }
-  
-  .search-input {
-    padding-left: 40px;
-    width: max-content;
-    background-color: var(--bg_default);
-
-  }
-  
-  @media screen and (max-width: 770px) {
-    .wrapper{
+  @media screen and (max-width: 480px) {
+    #wrapper{
         padding: 20px;
     }
     .search-bar {
-      flex-direction: row;
-      width: 100%; 
-      flex-wrap: wrap;
-      display:inline-block ;
-
-    }
-  
-    .logo {
-        top: 28%;
-      position: absolute;
-      display:inline-block ;
-
- 
-    }
-  
-    .search-input {
-      padding-left: 7%;
+      display: flex; 
+      flex-direction: column; 
       width: 100%;
     }
+ 
   }
+ 
   
-  #sort-select {
-    background-color: var(--bg_default);
-    color: var(	--body-text);
-  }
-  #filter-select{
-    width: auto;
-     margin: 3px;
-     background-color: var(--bg_default);
-    color: var(	--body-text);
-  }
   footer ion-icon{
     color: var(--heart-color);
     

@@ -9,15 +9,6 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-
-<script>
-  $(document).ready(function() {
-    $('#sort-button').select2({
-      theme: 'classic',
-    });
-  });
-</script>
-
 <script>
     function drawShape3() {
         var canvas = document.getElementById('mycanvas');
@@ -60,47 +51,47 @@
         }
     }
 </script>
-</head>
+</head id = "head">
 <body id="test" onload="drawShape3();">
     <div class="top-of-page">
-        <div class="top">
+        <div  id="top">
             <p id="web-topics">Web Topics</p>
             <div class="top-button">
-                <button id="dark-mode"><ion-icon name="moon-outline"></ion-icon>Dark Mode</button>
-                <button><ion-icon name="heart-outline"></ion-icon>Favourites</button>
+                <div id="header">Header</div>
+                <button id="dark-mode" onclick="handleThemeChange('dark')"><ion-icon name="moon-outline"></ion-icon>Dark Mode</button>
+                <button id = "favourites"><ion-icon name="heart-outline"></ion-icon>Favourites</button>
+                <div id="footer">Footer</div>
+                <script src="script.js"></script>
             </div>
         </div>
         <canvas id="mycanvas"></canvas>
         <h4> Welcome to our Website!</h4>
-        <p> We have a new design that's fresh, modern, and easy to use.
-        </p>
+        <p> We have a new design that's fresh, modern, and easy to use.</p>
     </div>
-    <div class="wrapper">
+    <div  id="wrapper">
                 <div class="search-bar">
                     <form action="index.html" method="post">
-
                         <div class="logo">
                         <ion-icon name="search"></ion-icon>
                         </div>
                         <input type="text" placeholder="Search the website..." class="search-input">
-                        
-                        <select id="sort-select">
-                            <option value="default">Sort by Default</option>
-                            <option value="name">Sort by Name</option>
-                            <option value="price">Sort by Price</option>
-                          </select>
-                        <select id="filter-select">
-                            <option value="">Filter by </option>
-                            <option value="option1">Default</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option>
-                            <option value="option4">Option 4</option>
-                        </select>
+                        <!--<label for="sortSelect">Sort by:</label>-->
+                        <select id="sortSelect">
+                          <option value="default">Sort by </option>
+                          <option value="ascending">Ascending</option>
+                          <option value="descending">Descending</option>
+                        </select> 
+                        <select id="filterSelect">
+                          <option value="default">Filter by </option>
+                          <option value="ascending">Ascending</option>
+                          <option value="descending">Descending</option>
+                        </select>                      
                     </form>
                 </div>
             <h4 class="topics-number">"24" Web Topics Found</h4>
-    <div class="conatiner">
-            <div class="box">
+    <div class="container">
+    <script src="script.js"></script>
+            <div class="box" id="htmlBox">
                 <img src="html.png" alt="this is the logo of html box">
                 <p>Web Development Languages</p>
                 <h3>HTML</h3>
@@ -1076,15 +1067,10 @@
   </div>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<script>
-    var darkmode = document.getElementById("dark-mode");
-    darkmode.onclick = function(){
-        document.body.classList.toggle("dark-theme");
-    }
-</script>
 </body>
 <footer>
     <p>Developed with <ion-icon name="heart"></ion-icon> &copy;2023</p>
-  </footer>
-  
+ </footer>
+
+ 
 </html>
